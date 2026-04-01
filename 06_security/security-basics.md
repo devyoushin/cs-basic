@@ -1,4 +1,4 @@
-# 보안 기초 (DevOps/SRE)
+# 보안 기초
 
 ## 인증 (Authentication) vs 인가 (Authorization)
 

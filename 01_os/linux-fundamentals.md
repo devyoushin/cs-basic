@@ -1,4 +1,4 @@
-# Linux 기초 - DevOps/SRE 필수
+# Linux 기초
 
 ## 파일시스템 구조
 

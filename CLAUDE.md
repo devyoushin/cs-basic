@@ -1,7 +1,7 @@
-# CS Basic - DevOps/SRE 엔지니어 필수 지식 저장소
+# CS Basic
 
 ## 목적
-DevOps/SRE 엔지니어가 반드시 알아야 하는 CS 기초 지식을 체계적으로 정리한 저장소입니다.
+CS 기초 지식을 체계적으로 정리한 저장소입니다.
 
 ## 디렉토리 구조
 
@@ -41,7 +41,7 @@ cs-basic/
     └── performance-engineering.md   # Flame Graph, perf, 레이턴시 분석
 ```
 
-## 학습 우선순위 (DevOps/SRE 관점)
+## 학습 우선순위
 
 1. **Linux & OS** — 모든 인프라의 기반
 2. **Network** — 트래픽 흐름과 장애 원인 파악에 필수
