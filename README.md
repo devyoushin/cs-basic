@@ -25,7 +25,6 @@ CS 기초부터 Senior 레벨 심화 내용까지 정리한 저장소입니다.
 | 13 | 신뢰성 — SLI/SLO/SLA, 에러 버짓, Circuit Breaker | [reliability.md](05_system-design/reliability.md) |
 | 14 | 보안 — 시크릿 관리, IAM, TLS, 컨테이너 보안 | [security-basics.md](06_security/security-basics.md) |
 | 15 | 모니터링 & 관찰가능성 — Metrics/Logs/Traces, Prometheus | [monitoring-logging.md](07_observability/monitoring-logging.md) |
-| 16 | Shell Scripting — sed, awk, grep, 병렬 처리 실전 | [practical-shell.md](08_shell-scripting/practical-shell.md) |
 
 ### Deep Dive (Senior Level)
 
@@ -51,7 +50,6 @@ cs-basic/
 ├── 05_system-design/
 ├── 06_security/
 ├── 07_observability/
-├── 08_shell-scripting/
 └── deepdive/                  # Senior 레벨 심화
 ```
 
