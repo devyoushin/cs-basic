@@ -16,7 +16,9 @@ cs-basic/
 │   ├── osi-tcpip.md
 │   ├── dns.md
 │   ├── http-https.md
-│   └── load-balancing.md
+│   ├── load-balancing.md
+│   ├── cdn.md
+│   └── vpn.md
 ├── 03_database/               # 데이터베이스
 │   ├── sql-basics.md
 │   ├── indexing-optimization.md
