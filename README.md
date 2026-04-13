@@ -30,7 +30,7 @@ CS 기초부터 Senior 레벨 심화 내용까지 정리한 저장소입니다.
 
 | 주제 | 파일 |
 |------|------|
-| Linux 커널 내부 — eBPF, syscall, NUMA, io_uring | [linux-kernel-internals.md](deepdive/linux-kernel-internals.md) |
+| Linux 커널 내부 — eBPF, syscall, NUMA, io_uring, OS 업그레이드, kdump, OOM, PSI, Seccomp, Network Namespace | [linux-kernel-internals.md](deepdive/linux-kernel-internals.md) |
 | TCP 내부 — BBR/CUBIC, conntrack, XDP, 커널 튜닝 | [tcp-internals.md](deepdive/tcp-internals.md) |
 | 데이터베이스 내부 — MVCC, WAL, B-Tree, 복제 | [database-internals.md](deepdive/database-internals.md) |
 | 분산 시스템 심화 — Raft 내부, Consistent Hashing, HLC | [distributed-systems-advanced.md](deepdive/distributed-systems-advanced.md) |
