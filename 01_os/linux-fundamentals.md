@@ -57,6 +57,44 @@ grep -r "ERROR" /var/log/        # 재귀 에러 검색
 awk '{print $1}' access.log | sort | uniq -c | sort -rn  # IP별 접근 횟수
 ```
 
+### 고급 진단 도구
+
+```bash
+# strace: 시스템 콜 추적
+strace -p <PID>                   # 실행 중인 프로세스의 syscall
+strace -c ls /tmp                 # syscall 통계 요약
+strace -e trace=open,read <cmd>   # 특정 syscall만 필터
+strace -T -p <PID>                # syscall별 소요 시간 포함
+
+# lsof: 열린 파일/소켓 조회
+lsof -p <PID>                     # 특정 프로세스가 연 파일
+lsof -i :8080                     # 특정 포트 사용 프로세스
+lsof -i TCP -n -P                 # 모든 TCP 소켓
+lsof -u root | wc -l              # root가 연 FD 수
+lsof +D /var/log                  # 특정 디렉토리 사용 프로세스
+
+# vmstat: 가상 메모리 & CPU 통계
+vmstat 1 5                        # 1초 간격 5회
+# r=실행큐, b=블로킹, si/so=스왑인/아웃, cs=컨텍스트스위칭, us/sy/id=CPU
+vmstat -s                         # 메모리 요약
+
+# iostat: 디스크 I/O 통계
+iostat -x 1                       # 확장 통계 1초 간격
+# %util=장치 사용률, await=I/O 대기시간, r/s w/s=읽기/쓰기 IOPS
+iostat -d -h 1                    # 사람이 읽기 쉬운 형식
+
+# sar: 시스템 활동 기록 & 조회
+sar -u 1 5                        # CPU 1초 간격
+sar -n DEV 1                      # 네트워크 인터페이스 통계
+sar -r 1                          # 메모리 통계
+sar -d 1                          # 디스크 I/O
+
+# perf: 성능 프로파일링
+perf top                          # 실시간 CPU 핫스팟
+perf stat <cmd>                   # 명령어 실행 통계 (cache miss, branch miss 등)
+perf record -g ./app && perf report  # 플레임 그래프용 데이터 수집
+```
+
 ---
 
 ## 파일 권한
@@ -137,4 +175,7 @@ WantedBy=multi-user.target
 - **OOM Killer** = 메모리 부족 시 커널이 프로세스 강제 종료. `/var/log/syslog`에서 `Out of memory` 확인
 - **파일 디스크립터 한도** = `ulimit -n` 확인. 고트래픽 서버는 65536 이상 설정 필요
 - **inode 고갈** = `df -i`로 확인. 파일 수가 너무 많으면 디스크 공간이 있어도 파일 생성 불가
-- **zombie 프로세스** = 부모 프로세스가 wait()를 안 한 경우. `ps aux | grep Z`로 확인
+- **zombie 프로세스** = 부모 프로세스가 wait()를 안 한 경우. `ps aux | awk '$8=="Z"'`로 확인
+- **strace 장애 분석**: `strace -c -p <PID>`로 syscall 통계 → 특정 syscall 비중 높으면 I/O 병목 또는 과도한 커널 전환
+- **iostat %util 100%**: 디스크 포화. `await` 값이 높으면 I/O 대기 심각. SSD 교체 또는 I/O 패턴 최적화 필요
+- **vmstat cs 높음**: 컨텍스트 스위칭 과다. 스레드 수 과다 또는 잦은 sleep/wakeup 패턴 의심

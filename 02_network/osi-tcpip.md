@@ -63,11 +63,36 @@ Client                    Server
 ### 슬라이딩 윈도우 (흐름 제어)
 - 수신자가 처리할 수 있는 양만큼 전송 조절
 - `rwnd` (Receive Window): 수신 버퍼 여유 공간
+- 수신 버퍼가 가득 차면 `rwnd=0` 전송 → 송신 중단 → 버퍼 여유 생기면 재개
 
-### 혼잡 제어
-- **Slow Start**: 처음에 천천히 시작해서 점진적으로 증가
-- **Congestion Avoidance**: 혼잡 감지 시 전송량 감소
-- **Fast Retransmit**: 3 duplicate ACK 수신 시 즉시 재전송
+### 혼잡 제어 (Congestion Control)
+
+**CWND (Congestion Window)**: 수신자 허용(rwnd)과 별도로 네트워크 혼잡 기반 송신량 제한.
+실제 전송량 = min(rwnd, cwnd)
+
+```
+cwnd
+  │           /
+  │          /          ← Congestion Avoidance (+1/RTT)
+  │         /
+ssthresh──/─────────────────
+  │      /                  → 3 dup ACK: ssthresh/2, cwnd→ssthresh (Fast Recovery)
+  │    /                    → Timeout: ssthresh/2, cwnd=1 (Slow Start 재시작)
+  │  / ← Slow Start (×2/RTT)
+  │/
+  └──────────────────────── time
+```
+
+| 단계 | 동작 |
+|------|------|
+| Slow Start | cwnd=1 MSS에서 시작. ACK마다 cwnd×2 (지수 증가). ssthresh 도달 시 전환 |
+| Congestion Avoidance | cwnd를 RTT당 1 MSS씩 선형 증가 |
+| Fast Retransmit | 3 duplicate ACK → 타임아웃 기다리지 않고 즉시 재전송 |
+| Fast Recovery | Fast Retransmit 후 ssthresh=cwnd/2, cwnd=ssthresh → Congestion Avoidance 재개 |
+
+### TCP Nagle 알고리즘
+- 작은 패킷을 모아 전송 (ACK 미수신 상태에서 전송 대기)
+- 대용량 전송에 유리, 인터랙티브 서비스에 불리 (`TCP_NODELAY`로 비활성화)
 
 ---
 
