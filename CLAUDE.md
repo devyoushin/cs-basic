@@ -1,61 +1,62 @@
-# CS Basic
+# CS Basic — 프로젝트 가이드
 
 ## 목적
-CS 기초 지식을 체계적으로 정리한 저장소입니다.
+CS 기초 지식을 체계적으로 정리한 저장소입니다. SRE/DevOps 실무와 연결되는 CS 이론을 한국어로 설명합니다.
+
+---
 
 ## 디렉토리 구조
 
 ```
 cs-basic/
-├── CLAUDE.md                  # 이 파일 (프로젝트 가이드)
+├── CLAUDE.md                  # 이 파일 (자동 로드)
+├── .claude/
+│   ├── settings.json          # 권한 설정 + PostToolUse 훅
+│   └── commands/              # 커스텀 슬래시 명령어
+│       ├── new-doc.md         # /new-doc — 새 CS 개념 문서 생성
+│       ├── new-runbook.md     # /new-runbook — 새 기술 분석 런북 생성
+│       ├── review-doc.md      # /review-doc — 문서 품질 검토
+│       ├── add-troubleshooting.md  # /add-troubleshooting — 장애 분석 추가
+│       └── search-kb.md       # /search-kb — 지식베이스 검색
+├── agents/                    # 전문 에이전트 정의
+│   ├── doc-writer.md          # CS 문서 작성 전문가
+│   ├── interview-coach.md     # 기술 면접 코치
+│   ├── deepdive-advisor.md    # 심화 개념 분석가
+│   └── system-designer.md     # 시스템 설계 전문가
+├── templates/                 # 문서 템플릿
+│   ├── service-doc.md         # CS 개념 문서 템플릿
+│   ├── runbook.md             # 기술 분석 런북 템플릿
+│   └── incident-report.md     # 장애 분석 보고서 템플릿
+├── rules/                     # Claude 작성 규칙
+│   ├── doc-writing.md         # 문서 작성 원칙
+│   ├── cs-conventions.md      # CS 문서 표준 관행
+│   ├── security-checklist.md  # 보안 개념 체크리스트
+│   └── monitoring.md          # 모니터링 개념 지침
 ├── 01_os/                     # 운영체제
-│   ├── linux-fundamentals.md  # 명령어, 진단 도구 (strace/lsof/iostat)
-│   ├── process-thread.md      # PCB, 스케줄링 알고리즘, 동기화, Thread Dump
-│   ├── memory-management.md   # 가상 메모리, 페이지 교체 알고리즘, Thrashing
-│   ├── fd-io-models.md        # FD, Blocking/Non-Blocking/epoll, C10K
-│   └── syscall-kernel.md      # 시스템 콜, 커널/유저 모드, strace
 ├── 02_network/                # 네트워킹
-│   ├── osi-tcpip.md           # OSI/TCP, TCP 혼잡제어 (CWND/Slow Start)
-│   ├── dns.md
-│   ├── http-https.md          # HTTP/1.1~3, QUIC, TLS, SNI
-│   ├── load-balancing.md      # LB 알고리즘 상세 (RR, LC, IP Hash 등)
-│   ├── socket-port.md         # 소켓 API, 백로그, 소켓 옵션 튜닝
-│   ├── iptables-nat.md        # Netfilter, iptables, NAT, conntrack
-│   ├── cdn.md
-│   └── vpn.md
 ├── 03_database/               # 데이터베이스
-│   ├── sql-basics.md          # ACID, 격리 수준
-│   ├── transaction-lock.md    # WAL, 락 종류, 갭락, 데드락, MVCC
-│   ├── indexing-optimization.md
-│   └── nosql-caching.md
 ├── 04_distributed-systems/    # 분산 시스템
-│   ├── cap-theorem.md
-│   ├── consensus.md
-│   └── messaging.md
 ├── 05_system-design/          # 시스템 설계
-│   ├── scalability.md
-│   ├── reliability.md
-│   └── cicd-deployment.md     # CI/CD, 배포 전략 (Blue-Green/Canary/Rolling)
 ├── 06_security/               # 보안
-│   ├── security-basics.md
-│   └── auth.md                # JWT 심화, OAuth 2.0, PKCE, RBAC
 ├── 07_observability/          # 모니터링 & 관찰가능성
-│   └── monitoring-logging.md
-├── 08_jvm/                    # JVM 기초 (Java/WAS 운영)
-│   ├── jvm-architecture.md    # 클래스 로더, 실행 엔진, JIT 컴파일러
-│   ├── jvm-memory.md          # Heap/Stack/Metaspace/Native Memory
-│   └── gc-basics.md           # GC 알고리즘, GC 종류, 튜닝 기초
+├── 08_jvm/                    # JVM 기초
 ├── 09_container/              # 컨테이너 & 쿠버네티스
-│   ├── docker-basics.md       # Namespace/cgroup/OverlayFS, 네트워킹
-│   └── kubernetes-basics.md   # 아키텍처, 스케줄링, Service/RBAC/NetworkPolicy
 └── deepdive/                  # Senior 레벨 심화
-    ├── linux-kernel-internals.md    # eBPF, syscall, NUMA, io_uring
-    ├── tcp-internals.md             # BBR/CUBIC, conntrack, XDP, 커널 튜닝
-    ├── database-internals.md        # MVCC, WAL, B-Tree, 복제 내부
-    ├── distributed-systems-advanced.md  # Raft 내부, Consistent Hashing, HLC
-    ├── container-internals.md       # Namespace, cgroup v2, Overlay FS, seccomp
-    └── performance-engineering.md   # Flame Graph, perf, 레이턴시 분석
 ```
+
+---
+
+## 커스텀 슬래시 명령어
+
+| 명령어 | 설명 | 사용 예시 |
+|--------|------|---------|
+| `/new-doc` | 새 CS 개념 문서 생성 | `/new-doc 01_os/linux-signals` |
+| `/new-runbook` | 새 기술 분석 런북 생성 | `/new-runbook TCP TIME_WAIT 분석` |
+| `/review-doc` | 문서 품질 검토 | `/review-doc 02_network/http-https.md` |
+| `/add-troubleshooting` | 장애 분석 케이스 추가 | `/add-troubleshooting OOM killer` |
+| `/search-kb` | 지식베이스 검색 | `/search-kb MVCC 동시성` |
+
+---
 
 ## 학습 우선순위
 
@@ -68,12 +69,97 @@ cs-basic/
 7. **Security** — 인프라 보안 hardening
 8. **System Design** — 아키텍처 설계 및 리뷰
 
+---
+
 ## 학습 단계
 
 | 단계 | 디렉토리 | 대상 |
 |------|---------|------|
 | 기초~중급 | `01_os` ~ `09_container` | 주니어~미드레벨 |
 | 심화 | `deepdive/` | Senior SRE/DevOps |
+
+---
+
+## 문서 목록
+
+### 01_os/
+| 파일 | 주제 |
+|---|---|
+| `linux-fundamentals.md` | 명령어, 진단 도구 (strace/lsof/iostat) |
+| `process-thread.md` | PCB, 스케줄링 알고리즘, 동기화, Thread Dump |
+| `memory-management.md` | 가상 메모리, 페이지 교체 알고리즘, Thrashing |
+| `fd-io-models.md` | FD, Blocking/Non-Blocking/epoll, C10K |
+| `syscall-kernel.md` | 시스템 콜, 커널/유저 모드, strace |
+
+### 02_network/
+| 파일 | 주제 |
+|---|---|
+| `osi-tcpip.md` | OSI/TCP, TCP 혼잡제어 (CWND/Slow Start) |
+| `dns.md` | DNS 쿼리 흐름, TTL, 레코드 타입 |
+| `http-https.md` | HTTP/1.1~3, QUIC, TLS, SNI |
+| `load-balancing.md` | LB 알고리즘 상세 (RR, LC, IP Hash 등) |
+| `socket-port.md` | 소켓 API, 백로그, 소켓 옵션 튜닝 |
+| `iptables-nat.md` | Netfilter, iptables, NAT, conntrack |
+| `cdn.md` | CDN 동작 원리, Edge, 캐싱 전략 |
+| `vpn.md` | VPN 터널링, IPsec, WireGuard |
+
+### 03_database/
+| 파일 | 주제 |
+|---|---|
+| `sql-basics.md` | ACID, 격리 수준 |
+| `transaction-lock.md` | WAL, 락 종류, 갭락, 데드락, MVCC |
+| `indexing-optimization.md` | B-Tree 인덱스, 쿼리 최적화 |
+| `nosql-caching.md` | Redis, MongoDB, 캐싱 패턴 |
+
+### 04_distributed-systems/
+| 파일 | 주제 |
+|---|---|
+| `cap-theorem.md` | CAP 정리, 일관성 모델 |
+| `consensus.md` | Raft, Paxos, 합의 알고리즘 |
+| `messaging.md` | Kafka, 메시지 큐, 이벤트 스트리밍 |
+
+### 05_system-design/
+| 파일 | 주제 |
+|---|---|
+| `scalability.md` | 수평/수직 확장, 샤딩, 파티셔닝 |
+| `reliability.md` | SLO/SLA/SLI, 에러 버짓, 장애 설계 |
+| `cicd-deployment.md` | CI/CD, 배포 전략 (Blue-Green/Canary/Rolling) |
+
+### 06_security/
+| 파일 | 주제 |
+|---|---|
+| `security-basics.md` | 보안 기초, 위협 모델링 |
+| `auth.md` | JWT 심화, OAuth 2.0, PKCE, RBAC |
+
+### 07_observability/
+| 파일 | 주제 |
+|---|---|
+| `monitoring-logging.md` | 메트릭, 로그, 트레이싱, OpenTelemetry |
+
+### 08_jvm/
+| 파일 | 주제 |
+|---|---|
+| `jvm-architecture.md` | 클래스 로더, 실행 엔진, JIT 컴파일러 |
+| `jvm-memory.md` | Heap/Stack/Metaspace/Native Memory |
+| `gc-basics.md` | GC 알고리즘, GC 종류, 튜닝 기초 |
+
+### 09_container/
+| 파일 | 주제 |
+|---|---|
+| `docker-basics.md` | Namespace/cgroup/OverlayFS, 네트워킹 |
+| `kubernetes-basics.md` | 아키텍처, 스케줄링, Service/RBAC/NetworkPolicy |
+
+### deepdive/
+| 파일 | 주제 |
+|---|---|
+| `linux-kernel-internals.md` | eBPF, syscall, NUMA, io_uring |
+| `tcp-internals.md` | BBR/CUBIC, conntrack, XDP, 커널 튜닝 |
+| `database-internals.md` | MVCC, WAL, B-Tree, 복제 내부 |
+| `distributed-systems-advanced.md` | Raft 내부, Consistent Hashing, HLC |
+| `container-internals.md` | Namespace, cgroup v2, Overlay FS, seccomp |
+| `performance-engineering.md` | Flame Graph, perf, 레이턴시 분석 |
+
+---
 
 ## 이 저장소 사용 방법
 - 각 파일은 개념 설명 + 실무 적용 포인트로 구성됩니다.
