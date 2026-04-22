@@ -10,6 +10,7 @@ CS 기초 지식을 체계적으로 정리한 저장소입니다. SRE/DevOps 실
 ```
 cs-basic/
 ├── CLAUDE.md                  # 이 파일 (자동 로드)
+├── README.md                  # 전체 문서 목록 & 학습 가이드
 ├── .claude/
 │   ├── settings.json          # 권한 설정 + PostToolUse 훅
 │   └── commands/              # 커스텀 슬래시 명령어
@@ -32,16 +33,16 @@ cs-basic/
 │   ├── cs-conventions.md      # CS 문서 표준 관행
 │   ├── security-checklist.md  # 보안 개념 체크리스트
 │   └── monitoring.md          # 모니터링 개념 지침
-├── 01_os/                     # 운영체제
-├── 02_network/                # 네트워킹
-├── 03_database/               # 데이터베이스
-├── 04_distributed-systems/    # 분산 시스템
-├── 05_system-design/          # 시스템 설계
-├── 06_security/               # 보안
-├── 07_observability/          # 모니터링 & 관찰가능성
-├── 08_jvm/                    # JVM 기초
-├── 09_container/              # 컨테이너 & 쿠버네티스
-└── deepdive/                  # Senior 레벨 심화
+├── 01_os/                     # 운영체제 (5개 파일)
+├── 02_network/                # 네트워킹 (9개 파일)
+├── 03_database/               # 데이터베이스 (3개 파일)
+├── 04_distributed-systems/    # 분산 시스템 (2개 파일)
+├── 05_system-design/          # 시스템 설계 (4개 파일)
+├── 06_security/               # 보안 (2개 파일)
+├── 07_observability/          # 모니터링 & 관찰가능성 (1개 파일)
+├── 08_jvm/                    # JVM 기초 (3개 파일)
+├── 09_container/              # 컨테이너 & 쿠버네티스 (2개 파일)
+└── deepdive/                  # Senior 레벨 심화 (6개 파일)
 ```
 
 ---
@@ -102,28 +103,28 @@ cs-basic/
 | `iptables-nat.md` | Netfilter, iptables, NAT, conntrack |
 | `cdn.md` | CDN 동작 원리, Edge, 캐싱 전략 |
 | `vpn.md` | VPN 터널링, IPsec, WireGuard |
+| `advanced-networking.md` | BGP, OSPF, ECMP, SR-IOV, DPDK (심화) |
 
 ### 03_database/
 | 파일 | 주제 |
 |---|---|
-| `sql-basics.md` | ACID, 격리 수준 |
+| `sql-basics.md` | ACID, 격리 수준, 인덱스, EXPLAIN |
 | `transaction-lock.md` | WAL, 락 종류, 갭락, 데드락, MVCC |
-| `indexing-optimization.md` | B-Tree 인덱스, 쿼리 최적화 |
 | `nosql-caching.md` | Redis, MongoDB, 캐싱 패턴 |
 
 ### 04_distributed-systems/
 | 파일 | 주제 |
 |---|---|
-| `cap-theorem.md` | CAP 정리, 일관성 모델 |
-| `consensus.md` | Raft, Paxos, 합의 알고리즘 |
-| `messaging.md` | Kafka, 메시지 큐, 이벤트 스트리밍 |
+| `cap-theorem.md` | CAP 정리, BASE vs ACID, 일관성 모델, 복제 |
+| `messaging.md` | Kafka, 메시지 큐, Pub/Sub, 이벤트 스트리밍 |
 
 ### 05_system-design/
 | 파일 | 주제 |
 |---|---|
-| `scalability.md` | 수평/수직 확장, 샤딩, 파티셔닝 |
-| `reliability.md` | SLO/SLA/SLI, 에러 버짓, 장애 설계 |
-| `cicd-deployment.md` | CI/CD, 배포 전략 (Blue-Green/Canary/Rolling) |
+| `scalability.md` | 수평/수직 확장, 샤딩, 파티셔닝, Auto Scaling |
+| `reliability.md` | SLI/SLO/SLA, 에러 버짓, Circuit Breaker, 장애 설계 |
+| `cicd-deployment.md` | CI/CD 파이프라인, Blue-Green/Canary/Rolling 배포 |
+| `backup.md` | 파일 백업 vs 스냅샷 백업, RTO/RPO, 백업 전략 |
 
 ### 06_security/
 | 파일 | 주제 |
