@@ -127,6 +127,7 @@ OS → Network → Distributed Systems → Observability → Database → JVM �
 |------|----------|
 | [linux-kernel-internals.md](deepdive/linux-kernel-internals.md) | eBPF, io_uring, NUMA, kdump, OOM, PSI, Seccomp, Network Namespace |
 | [tcp-internals.md](deepdive/tcp-internals.md) | BBR/CUBIC 혼잡제어, conntrack 내부, XDP, 커널 파라미터 튜닝 |
+| [tcp-deep-dive.md](deepdive/tcp-deep-dive.md) | TCP 상태머신, 3/4-way handshake 커널 내부, 흐름제어/혼잡제어 심화, VPC Flow Log 분석, sysctl 완전 정리 |
 | [database-internals.md](deepdive/database-internals.md) | MVCC 내부, WAL 구조, B-Tree 분할, 복제 내부 |
 | [distributed-systems-advanced.md](deepdive/distributed-systems-advanced.md) | Raft 내부 구현, Consistent Hashing, HLC |
 | [container-internals.md](deepdive/container-internals.md) | Namespace 종류, cgroup v2, OverlayFS, seccomp BPF |

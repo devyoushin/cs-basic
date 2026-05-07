@@ -155,6 +155,7 @@ cs-basic/
 |---|---|
 | `linux-kernel-internals.md` | eBPF, syscall, NUMA, io_uring |
 | `tcp-internals.md` | BBR/CUBIC, conntrack, XDP, 커널 튜닝 |
+| `tcp-deep-dive.md` | TCP 상태머신, SYN/ACK/4-way 커널 내부, 흐름제어/혼잡제어 심화, VPC Flow Log, sysctl 완전 정리 |
 | `database-internals.md` | MVCC, WAL, B-Tree, 복제 내부 |
 | `distributed-systems-advanced.md` | Raft 내부, Consistent Hashing, HLC |
 | `container-internals.md` | Namespace, cgroup v2, Overlay FS, seccomp |
