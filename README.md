@@ -132,6 +132,10 @@ OS → Network → Distributed Systems → Observability → Database → JVM �
 | [distributed-systems-advanced.md](deepdive/distributed-systems-advanced.md) | Raft 내부 구현, Consistent Hashing, HLC |
 | [container-internals.md](deepdive/container-internals.md) | Namespace 종류, cgroup v2, OverlayFS, seccomp BPF |
 | [performance-engineering.md](deepdive/performance-engineering.md) | Flame Graph, perf/bpftrace, 레이턴시 분포 분석 |
+| [kubernetes-deep-dive.md](deepdive/kubernetes-deep-dive.md) | etcd Raft, kube-proxy iptables/IPVS, 스케줄러 프레임워크, CNI/CRI 내부, cgroup QoS |
+| [linux-memory-internals.md](deepdive/linux-memory-internals.md) | 페이지 테이블, COW, OOM Killer, NUMA, HugePage/THP, cgroup 메모리 컨트롤러 |
+| [observability-deep-dive.md](deepdive/observability-deep-dive.md) | eBPF 트레이싱, Prometheus TSDB/PromQL, OpenTelemetry 내부, Tail Sampling, SLO 번 레이트 |
+| [storage-io-internals.md](deepdive/storage-io-internals.md) | 블록 I/O 스택, io_uring, NVMe 큐, 파일시스템 저널링, EBS/S3 내부 동작 |
 
 ---
 

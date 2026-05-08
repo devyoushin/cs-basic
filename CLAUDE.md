@@ -156,6 +156,10 @@ cs-basic/
 | `linux-kernel-internals.md` | eBPF, syscall, NUMA, io_uring |
 | `tcp-internals.md` | BBR/CUBIC, conntrack, XDP, 커널 튜닝 |
 | `tcp-deep-dive.md` | TCP 상태머신, SYN/ACK/4-way 커널 내부, 흐름제어/혼잡제어 심화, VPC Flow Log, sysctl 완전 정리 |
+| `kubernetes-deep-dive.md` | etcd Raft, kube-proxy iptables/IPVS, 스케줄러 프레임워크, CNI/CRI 내부, cgroup QoS |
+| `linux-memory-internals.md` | 페이지 테이블, COW, OOM Killer, NUMA, HugePage/THP, cgroup 메모리 컨트롤러 |
+| `observability-deep-dive.md` | eBPF 트레이싱, Prometheus TSDB/PromQL, OTel 내부, Tail Sampling, SLO 번 레이트 |
+| `storage-io-internals.md` | 블록 I/O 스택, io_uring, NVMe 큐, 파일시스템 저널링, EBS/S3 내부 동작 |
 | `database-internals.md` | MVCC, WAL, B-Tree, 복제 내부 |
 | `distributed-systems-advanced.md` | Raft 내부, Consistent Hashing, HLC |
 | `container-internals.md` | Namespace, cgroup v2, Overlay FS, seccomp |
