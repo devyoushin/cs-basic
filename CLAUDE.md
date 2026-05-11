@@ -33,7 +33,7 @@ cs-basic/
 │   ├── cs-conventions.md      # CS 문서 표준 관행
 │   ├── security-checklist.md  # 보안 개념 체크리스트
 │   └── monitoring.md          # 모니터링 개념 지침
-├── 01_os/                     # 운영체제 (5개 파일)
+├── 01_os/                     # 운영체제 (6개 파일)
 ├── 02_network/                # 네트워킹 (9개 파일)
 ├── 03_database/               # 데이터베이스 (3개 파일)
 ├── 04_distributed-systems/    # 분산 시스템 (2개 파일)
@@ -42,7 +42,7 @@ cs-basic/
 ├── 07_observability/          # 모니터링 & 관찰가능성 (1개 파일)
 ├── 08_jvm/                    # JVM 기초 (3개 파일)
 ├── 09_container/              # 컨테이너 & 쿠버네티스 (2개 파일)
-└── deepdive/                  # Senior 레벨 심화 (6개 파일)
+└── deepdive/                  # Senior 레벨 심화 (12개 파일)
 ```
 
 ---
@@ -91,6 +91,7 @@ cs-basic/
 | `memory-management.md` | 가상 메모리, 페이지 교체 알고리즘, Thrashing |
 | `fd-io-models.md` | FD, Blocking/Non-Blocking/epoll, C10K |
 | `syscall-kernel.md` | 시스템 콜, 커널/유저 모드, strace |
+| `os-complete-guide.md` | OS 기초 완전 정리 — 메모리/동기화/파일시스템/syscall/I/O/스케줄링/네트워크 스택/부팅/cgroup |
 
 ### 02_network/
 | 파일 | 주제 |
@@ -164,6 +165,7 @@ cs-basic/
 | `distributed-systems-advanced.md` | Raft 내부, Consistent Hashing, HLC |
 | `container-internals.md` | Namespace, cgroup v2, Overlay FS, seccomp |
 | `performance-engineering.md` | Flame Graph, perf, 레이턴시 분석 |
+| `proxy-deep-dive.md` | Forward/Reverse/Transparent Proxy, Envoy Sidecar, SOCKS5, API Gateway, PROXY Protocol |
 
 ---
 
