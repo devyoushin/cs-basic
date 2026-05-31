@@ -5,7 +5,7 @@ description: CS 지식 베이스에서 키워드를 검색합니다. 사용법: 
 `$ARGUMENTS` 키워드로 지식 베이스를 검색합니다.
 
 ## 검색 범위
-- `01_os/` ~ `09_container/`, `deepdive/` 전체 마크다운 파일
+- `01_os/` ~ `09_container/`, `docs/deepdive/` 전체 마크다운 파일
 
 ## 출력 형식
 

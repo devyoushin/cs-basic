@@ -9,7 +9,7 @@ description: CS 개념 기술 분석 보고서를 생성합니다. 사용법: /n
 ## 파일 생성 규칙
 1. 파일명: `analysis-{주제}-{분석명}.md`
 2. 저장 위치: 해당 카테고리 디렉토리
-3. `templates/runbook.md` 템플릿 기반으로 작성
+3. `docs/templates/runbook.md` 템플릿 기반으로 작성
 
 ## 작성 시 필수 포함 사항
 - **문제 상황**: 분석 배경 및 목적
