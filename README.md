@@ -6,7 +6,7 @@
 
 - 문서 지도: `docs/README.md`
 - 운영/실습 자산: `ops/README.md`
-- AI 작업 지침: `CLAUDE.md`
+- AI 작업 지침: `CLAUDE.md`, `AGENTS.md -> CLAUDE.md`
 
 ## 구조
 
@@ -15,7 +15,8 @@
 | `docs/` | CS 주제별 문서, 심화 문서, 에이전트, 작성 규칙, 템플릿 |
 | `ops/` | 향후 실습 코드와 검증 스크립트 |
 | `.claude/` | Claude Code 커맨드와 설정 |
-| `CLAUDE.md` | Claude 작업 지침 |
+| `CLAUDE.md` | Claude/Codex 공통 작업 지침 원본 |
+| `AGENTS.md -> CLAUDE.md` | Codex/agent 작업 지침 링크 |
 
 ## 학습 흐름
 
