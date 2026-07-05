@@ -19,16 +19,16 @@ cs-basic/
 │       ├── review-doc.md      # /review-doc — 문서 품질 검토
 │       ├── add-troubleshooting.md  # /add-troubleshooting — 장애 분석 추가
 │       └── search-kb.md       # /search-kb — 지식베이스 검색
-├── docs/agents/                    # 전문 에이전트 정의
+├── docs/99-agents/                    # 전문 에이전트 정의
 │   ├── doc-writer.md          # CS 문서 작성 전문가
 │   ├── interview-coach.md     # 기술 면접 코치
 │   ├── deepdive-advisor.md    # 심화 개념 분석가
 │   └── system-designer.md     # 시스템 설계 전문가
-├── docs/templates/                 # 문서 템플릿
+├── docs/91-templates/                 # 문서 템플릿
 │   ├── service-doc.md         # CS 개념 문서 템플릿
 │   ├── runbook.md             # 기술 분석 런북 템플릿
 │   └── incident-report.md     # 장애 분석 보고서 템플릿
-├── docs/rules/                     # Claude 작성 규칙
+├── docs/90-standards/                     # Claude 작성 규칙
 │   ├── doc-writing.md         # 문서 작성 원칙
 │   ├── cs-conventions.md      # CS 문서 표준 관행
 │   ├── security-checklist.md  # 보안 개념 체크리스트
@@ -42,7 +42,7 @@ cs-basic/
 ├── 07_observability/          # 모니터링 & 관찰가능성 (1개 파일)
 ├── 08_jvm/                    # JVM 기초 (3개 파일)
 ├── 09_container/              # 컨테이너 & 쿠버네티스 (2개 파일)
-└── docs/deepdive/                  # Senior 레벨 심화 (12개 파일)
+└── docs/10-deep-dive/                  # Senior 레벨 심화 (12개 파일)
 ```
 
 ---
@@ -77,7 +77,7 @@ cs-basic/
 | 단계 | 디렉토리 | 대상 |
 |------|---------|------|
 | 기초~중급 | `01_os` ~ `09_container` | 주니어~미드레벨 |
-| 심화 | `docs/deepdive/` | Senior SRE/DevOps |
+| 심화 | `docs/10-deep-dive/` | Senior SRE/DevOps |
 
 ---
 
@@ -151,7 +151,7 @@ cs-basic/
 | `docker-basics.md` | Namespace/cgroup/OverlayFS, 네트워킹 |
 | `kubernetes-basics.md` | 아키텍처, 스케줄링, Service/RBAC/NetworkPolicy |
 
-### docs/deepdive/
+### docs/10-deep-dive/
 | 파일 | 주제 |
 |---|---|
 | `linux-kernel-internals.md` | eBPF, syscall, NUMA, io_uring |

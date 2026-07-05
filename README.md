@@ -20,7 +20,7 @@
 
 ## 학습 흐름
 
-1. `docs/01_os/`, `docs/02_network/`에서 OS와 네트워크 기본기 학습
-2. `docs/03_database/`, `docs/04_distributed-systems/`에서 데이터와 분산 시스템 학습
-3. `docs/05_system-design/`, `docs/06_security/`에서 설계와 보안 관점 확장
-4. `docs/deepdive/`에서 TCP, 프록시, 커널, 스토리지, 관측 심화 학습
+1. `docs/01-os/`, `docs/02-network/`에서 OS와 네트워크 기본기 학습
+2. `docs/03-database/`, `docs/04-distributed-systems/`에서 데이터와 분산 시스템 학습
+3. `docs/05-system-design/`, `docs/06-security/`에서 설계와 보안 관점 확장
+4. `docs/10-deep-dive/`에서 TCP, 프록시, 커널, 스토리지, 관측 심화 학습
